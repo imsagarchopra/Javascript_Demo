@@ -1,0 +1,20 @@
+﻿<script type="text/javascript">
+    var Shape = function () {
+        this.shapeName = "None";
+        throw new Error("Cannot create an instance of an abstract class");
+    }
+
+    Shape.prototype.draw = function () {
+        return "Drawing " + this.shapeName;
+    }
+
+    var Circle = function (shapeName)
+    {
+        this.shapeName = shapeName;
+    }
+
+    Circle.prototype = Object.create(Shape.prototype);
+
+    var c = new Circle("Circle");
+    document.write(c.draw());
+</script>

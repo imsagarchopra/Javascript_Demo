@@ -1,0 +1,26 @@
+﻿<script type="text/javascript">
+    var Shape = function () { }
+    Shape.prototype.draw = function ()
+    {
+        return "I am a generic shape</br>";
+    }
+
+    var Circle = function () { }
+    Circle.prototype = Object.create(Shape.prototype);
+    Circle.prototype.draw = function () {
+        return "I am a Circle shape</br>";
+    }
+    var Square = function () { }
+    Square.prototype = Object.create(Shape.prototype);
+    Square.prototype.draw = function () {
+        return "I am a Square shape</br>";
+    }
+    var Triangle = function () { }
+    Triangle.prototype = Object.create(Shape.prototype);
+
+    var shapes = [new Shape(), new Circle(), new Square(), new Triangle()];
+
+    shapes.forEach(function (shape) {
+        document.write(shape.draw());
+    })
+</script>
